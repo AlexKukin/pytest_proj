@@ -11,6 +11,7 @@ def test_dicts():
     assert dicts.get_val(test_dict, "wrong_key") == "git"
     assert dicts.get_val(test_dict, "wrong_key", "my_def_value") == "my_def_value"
 
-    assert dicts.get_val([], "key1") == "git"
-    assert dicts.get_val([], "key1", "my_def_value") == "my_def_value"
+    assert dicts.get_val({}, "key1") == "git"
+    assert dicts.get_val({}, "key1", "my_def_value") == "my_def_value"
 
+    assert dicts.get_val(test_dict, "wrong_key", None) is None
